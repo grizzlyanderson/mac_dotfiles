@@ -3,12 +3,6 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 # Kubernetes
 export KUBECONFIG=/Users/eric.anderson/.kube/kubeconfig
 alias kcb="kubectl -n=billing"
-# assorted general alises
-alias lsh="ls -lha"
-alias startAnsible="source ~/projects/virtualenvs/ansible/bin/activate"
-# requires $ brew install lastpass-cli --with-pinentry --with-doc
-alias linuxpass='lpass show "ecovate.com - Linux" --password -c'
-alias linuxpassprnt='lpass show "ecovate.com - Linux" --password'
 
 # auto complete for kubectl
 source $(brew --prefix)/etc/bash_completion
@@ -22,8 +16,11 @@ alias gpi="env GOOS=linux GOARCH=arm go build"
 # adding linux arm gcc
 export PATH=$PATH:/usr/local/arc/bin
 
+# add local scripts to path
+export PATH=$PATH:$HOME/bin
+
 # set prompt, conditional on host (desktop or not)
-if [ "$HOSTNAME" == "MD25LJ1WUF8JC" ]; then
+if [ "$HOSTNAME" == "MC02K38ZXDNMP" ]; then
   export PS1="\[\033[0;32m\]What? \[\033[0m\]"
 elif [ "$HOSTNAME" == "MC02RR269FVH6" ]; then
   export PS1="\[\033[0;32m\]Say What? \[\033[0m\]"
@@ -46,26 +43,12 @@ export DEPLOY_DIR=/Users/eric.anderson/stash/EI/deploy
 ####
 eval "$(jenv init -)"
 
-######
-# tunnel active mq console ports from remote machines to local ports, based on the last 2 digits of the remote machine's name
-# e.g. fordev324 maps to 7824; fordev326 to 7826 and so forth
-######
-function amqtunnel() {
-  last_port_digits="${1: -2}";
-  if [[ ${last_port_digits:0:1} == [a-zA-Z] ]]; then 
-    last_port_digits="0${last_port_digits: -1}"
-  fi
-  datacenter_name="${1:0:3}";
-  server_name=$1;
-  echo "tunneling to $1 on local port 78$last_port_digits in $datacenter_name";
-
-  eval ssh -fN -L 0.0.0.0:78$last_port_digits:$server_name.ecovate.com:8161 ${datacenter_name}inf2.ecovate.com;
-}
-
-function closeamqtunnel_all() {
-  echo "closing $(ps aux | grep 'ssh -fN -L 0.0.0.0:78[0-9][0-9]')";
-  kill $(ps aux | grep 'ssh -fN -L 0.0.0.0:78[0-9][0-9]' | awk '{print $2}');
-}
+####
+# load aliases
+####
+if [ -f $HOME/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
 
 ######
 # homeschick config
