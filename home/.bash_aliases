@@ -8,6 +8,13 @@ alias linuxpass='lpass show "ecovate.com - Linux" --password -c'
 alias linuxpassprnt='lpass show "ecovate.com - Linux" --password'
 
 ######
+#  postgres - installed/managed via homebrew
+######
+alias start_postgres="brew services start postgresql"
+alias stop_postrgres="brew services stop postgresql"
+alias restart_postgres="bres services restart postgresql"
+
+######
 # tunnel active mq console ports from remote machines to local ports, based on the last 2 digits of the remote machine's name
 # e.g. fordev324 maps to 7824; fordev326 to 7826 and so forth
 ######
