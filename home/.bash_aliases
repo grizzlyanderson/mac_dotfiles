@@ -27,11 +27,21 @@ function amqtunnel() {
   eval ssh -fN -L 0.0.0.0:78$last_port_digits:$server_name.ecovate.com:8161 ${datacenter_name}inf2.ecovate.com;
 }
 
+function psqltunnel() {
+  echo "tunneling to psql on $1 on localport 54320 via $2inf2";
+
+  eval ssh -fN -L 0.0.0.0:54320:$1:5432 $2inf2.ecovate.com;
+}
+
 function closeamqtunnel_all() {
   echo "closing $(ps aux | grep 'ssh -fN -L 0.0.0.0:78[0-9][0-9]')";
   kill $(ps aux | grep 'ssh -fN -L 0.0.0.0:78[0-9][0-9]' | awk '{print $2}');
 }
 
+function closepsqltunnel() {
+  echo "closing $(ps aux | grep 'ssh -fN -L 0.0.0.0:54320')";
+  kill $(ps aux | grep 'ssh -fN -L 0.0.0.0:54320' | awk '{print $2}');
+}
 function pscon(){
   _get_last_port_digits ${1};
   datacenter_name="${1:0:3}";
