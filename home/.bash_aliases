@@ -5,10 +5,6 @@ alias startAnsible="source ~/projects/virtualenvs/ansible/bin/activate"
 alias funcs="declare -F"
 # requires $ brew install lastpass-cli --with-pinentry --with-doc
 alias linuxpass='lpass show "readytalk.io - Linux" --password -c'
-<<<<<<< HEAD
-alias linuxpassprnt='lpass show "ecovate.com - Linux" --password'
-=======
->>>>>>> ca8d1507938471e4e404be427cbfc132976d91d0
 
 ######
 #  postgres - installed/managed via homebrew
