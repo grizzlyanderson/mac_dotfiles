@@ -14,4 +14,5 @@ brew "postgresql", restart_service: true
 brew "sqlite"
 brew "python", link: false
 brew "wget"
+brew "bash-git-prompt"
 cask "virtualbox"
