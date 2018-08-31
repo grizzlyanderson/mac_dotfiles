@@ -15,4 +15,6 @@ brew "sqlite"
 brew "python", link: false
 brew "wget"
 brew "bash-git-prompt"
+brew "bat"
+brea "diff-so-fancy"
 cask "virtualbox"
