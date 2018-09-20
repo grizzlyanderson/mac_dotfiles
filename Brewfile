@@ -1,8 +1,13 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+brew "bash-git-prompt"
+brew "bat"
+brew "diff-so-fancy"
 brew "git"
+brew "groovy"
 brew "jenv"
 brew "kubernetes-cli", link: false
 brew "lastpass-cli", args: ["with-pinentry"]
@@ -14,7 +19,3 @@ brew "postgresql", restart_service: true
 brew "sqlite"
 brew "python", link: false
 brew "wget"
-brew "bash-git-prompt"
-brew "bat"
-brea "diff-so-fancy"
-cask "virtualbox"
