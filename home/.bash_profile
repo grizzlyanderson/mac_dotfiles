@@ -24,8 +24,13 @@ if [ "$HOSTNAME" == "MC02K38ZXDNMP" ]; then
   export PS1="\[\033[0;32m\]What? \[\033[0m\]"
 elif [ "$HOSTNAME" == "MC02RR269FVH6" ]; then
   export PS1="\[\033[0;32m\]Say What? \[\033[0m\]"
+elif [[ "$HOSTNAME" == "MFVFXK2ZHHV2H"* ]]; then
+  export PS1="\[\033[0;32m\]Now What? \[\033[0m\]"
 else
-  export PS1="\[\033[40;32m\]\u\[\033[39m\]@\[\033[91m\]\h\[\033[39m\]:\[\033[96m\]\w \[\033[0m\]"
+  export PS1="\[\033[91m\]\h\[\033[39m\]:\[\033[96m\]\w \[\033[0m\]"
+fi
+if [ "$USER" != "eric.anderson" ] && [ "$USER" != "eanderso" ] && [ "$USER" != "eanderson" ]; then
+  export PS1="\[\033[40;32m\]\u\[\033[39m\]@\$PS1"
 fi
 
 ####
@@ -93,3 +98,6 @@ GIT_PROMPT_SHOW_UNTRACKED_FILES=normal # can be no, normal or all; determines co
 GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
 # GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
 # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
+
+### welcome stuff
+printf "Welcome to $HOSTNAME. The time is $(date +'%m/%d/%Y  %r')\n\n"
