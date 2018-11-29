@@ -69,6 +69,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+######
+# groovy config for intelij (installed via brew)
+######
+export GROOVY_HOME=/usr/local/opt/groovysdk/libexec
 
 ######
 # git-prompt stuff
