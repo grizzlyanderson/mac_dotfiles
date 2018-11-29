@@ -9,7 +9,7 @@ brew "bat"
 brew "diff-so-fancy"
 brew "git"
 brew "go"
-brew "groovy"
+brew "groovydk
 brew "jenv"
 brew "kubernetes-cli"
 brew "lastpass-cli"
