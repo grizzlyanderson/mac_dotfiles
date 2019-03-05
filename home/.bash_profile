@@ -20,12 +20,16 @@ export PATH=$PATH:/usr/local/arc/bin
 export PATH=$PATH:$HOME/bin
 
 # set prompt, conditional on host (desktop or not)
+function nonzero_return() {
+	RETVAL=$?
+	[ $RETVAL -ne 0 ] && echo "$RETVAL"
+}
 if [ "$HOSTNAME" == "MC02K38ZXDNMP" ]; then
   export PS1="\[\033[0;32m\]What? \[\033[0m\]"
 elif [ "$HOSTNAME" == "MC02RR269FVH6" ]; then
   export PS1="\[\033[0;32m\]Say What? \[\033[0m\]"
 elif [[ "$HOSTNAME" == "MFVFXK2ZHHV2H"* ]]; then
-  export PS1="\[\033[0;32m\]Now What? \[\033[0m\]"
+  export PS1="\[\e[36m\]\h\[\e[m\]:\[\e[33m\]\w\[\e[m\]\[\e[31m\]\`nonzero_return\`\[\e[m\]\n\[\033[0;32m\]Now What? \[\033[0m\]"
 else
   export PS1="\[\033[91m\]\h\[\033[39m\]:\[\033[96m\]\w \[\033[0m\]"
 fi
