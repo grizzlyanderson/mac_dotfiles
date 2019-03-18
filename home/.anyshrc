@@ -1,0 +1,37 @@
+####
+# hue stuff - get info about RT environments
+# Load hue automatically by adding
+# the following to ~/.bash_profile:
+####
+eval "$(/Users/eric.anderson/stash/hue/bin/hue init -)"
+
+# Ensure you have set the following environment variables
+export DEPLOY_DIR=/Users/eric.anderson/stash/EI/deploy
+
+#####
+# multiple java environment support
+####
+eval "$(jenv init -)"
+
+######
+# homeschick config
+#####
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
+
+
+######
+# nvm stuff
+######
+source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+######
+# groovy config for intelij (installed via brew)
+######
+export GROOVY_HOME=/usr/local/opt/groovysdk/libexec
+
+### welcome stuff
+printf "Welcome to $HOSTNAME. The time is $(date +'%m/%d/%Y  %r')\n\n"
