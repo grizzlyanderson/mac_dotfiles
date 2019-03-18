@@ -63,3 +63,14 @@ function _get_last_port_digits() {
     last_port_digits="0${last_port_digits: -1}"
   fi
 }
+
+function options() {
+  if [ -n "$ZSH_VERSION" ]; then
+    PLUGIN_PATH="$HOME/.oh-my-zsh/plugins/"
+    for plugin in $plugins; do
+        echo "\n\nPlugin: $plugin"; grep -r "^function \w*" $PLUGIN_PATH$plugin | awk '{print $2}' | sed 's/()//'| tr '\n' ', '; grep -r "^alias" $PLUGIN_PATH$plugin | awk '{print $2}' | sed 's/=.*//' |  tr '\n' ', '
+    done
+  else 
+    echo "Not zsh\n"
+  fi
+}

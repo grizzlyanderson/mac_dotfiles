@@ -37,47 +37,6 @@ if [ "$USER" != "eric.anderson" ] && [ "$USER" != "eanderso" ] && [ "$USER" != "
   export PS1="\[\033[40;32m\]\u\[\033[39m\]@\$PS1"
 fi
 
-####
-# hue stuff - get info about RT environments
-# Load hue automatically by adding
-# the following to ~/.bash_profile:
-####
-eval "$(/Users/eric.anderson/stash/hue/bin/hue init -)"
-
-# Ensure you have set the following environment variables
-export DEPLOY_DIR=/Users/eric.anderson/stash/EI/deploy
-
-#####
-# multiple java environment support
-####
-eval "$(jenv init -)"
-
-####
-# load aliases
-####
-if [ -f $HOME/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
-
-######
-# homeschick config
-#####
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
-
-######
-# nvm stuff
-######
-source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-######
-# groovy config for intelij (installed via brew)
-######
-export GROOVY_HOME=/usr/local/opt/groovysdk/libexec
-
 ######
 # git-prompt stuff
 ######
@@ -107,5 +66,17 @@ GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FI
 # GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
 # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
 
-### welcome stuff
-printf "Welcome to $HOSTNAME. The time is $(date +'%m/%d/%Y  %r')\n\n"
+
+####
+# load aliases
+####
+if [ -f $HOME/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
+
+####
+# load any-shell stuff, not aliases
+####
+if [ -f $HOME/.anyshrc ]; then
+    ~/.anyshrc
+fi
