@@ -33,7 +33,7 @@
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 #### GRIZ MODIFICATIONS OF AGNOSTER
 ### Include Kube prompt
-source /usr/local/opt/kube-ps1/share/kube-ps1.sh
+source ~/bin/kube-ps1.sh
 KUBE_PS1_SYMBOL_ENABLE=true
 KUBE_PS1_SYMBOL_USER_IMG=true
 
