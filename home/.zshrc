@@ -1,5 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+# golang path setup - changes default GOPATH
+export GOPATH=$HOME/projects/go
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/eric.anderson/.oh-my-zsh"
@@ -72,8 +75,6 @@ plugins=(
   osx 
   wd
   z
-  zsh-auto-suggestions
-  zsh-syntax-highlighting 
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -98,6 +99,12 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# Max iTerm2 keybindings to move forward/backwards
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -110,6 +117,7 @@ source $ZSH/oh-my-zsh.sh
 ####
 # load aliases
 ####
+export HOSTNAME=$(hostname)
 if [ -f $HOME/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
@@ -121,3 +129,6 @@ if [ -f $HOME/.anyshrc ]; then
     
   . ~/.anyshrc
 fi
+
+#Reload zsh completions
+autoload -U compinit && compinit
