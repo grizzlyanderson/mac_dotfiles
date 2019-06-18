@@ -1,3 +1,6 @@
+# add local scripts to path
+export PATH=$PATH:$HOME/bin
+
 ####
 # hue stuff - get info about RT environments
 # Load hue automatically by adding
@@ -6,7 +9,7 @@
 eval "$(/Users/eric.anderson/stash/hue/bin/hue init -)"
 
 # Ensure you have set the following environment variables
-export DEPLOY_DIR=/Users/eric.anderson/stash/EI/deploy
+export DEPLOY_DIR=/Users/eric.anderson/stash/EI/deploy/
 
 #####
 # multiple java environment support
@@ -32,6 +35,11 @@ export NVM_DIR="$HOME/.nvm"
 # groovy config for intelij (installed via brew)
 ######
 export GROOVY_HOME=/usr/local/opt/groovysdk/libexec
+
+######
+# erlang rebar stuff
+######
+export PATH=$PATH:$HOME/projects/github.com/rebar
 
 ### welcome stuff
 printf "Welcome to $HOSTNAME. The time is $(date +'%m/%d/%Y  %r')\n\n"
