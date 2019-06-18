@@ -5,6 +5,7 @@ alias startAnsible="source ~/projects/virtualenvs/ansible/bin/activate"
 alias funcs="declare -F"
 # requires $ brew install lastpass-cli --with-pinentry --with-doc
 alias linuxpass='lpass show "readytalk.io - Linux" --password -c'
+alias pgipass='lpass show "pgi-tools.com" --password -c'
 alias cat="bat" # \cat to use original cat...
 alias diff="diff-so-fancy"
 ######
@@ -13,6 +14,14 @@ alias diff="diff-so-fancy"
 alias start_postgres="brew services start postgresql"
 alias stop_postrgres="brew services stop postgresql"
 alias restart_postgres="bres services restart postgresql"
+
+
+#####
+#  k8s/helm aliases
+#####
+alias uchelm='helm --tiller-namespace=ucaas-messaging'
+# launch brwoser window with AWS console for PGi account
+alias awsl='stim aws login -a aws-globalmeet -r ucaas-messaging -w'
 
 ######
 # tunnel active mq console ports from remote machines to local ports, based on the last 2 digits of the remote machine's name
