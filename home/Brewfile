@@ -4,38 +4,72 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "pgi/cask", "ssh://git@bitbucket.pgi-tools.com/dt/homebrew-cask.git"
+tap "pgi/cash", "ssh://git@bitbucket.pgi-tools.com/dt/homebrew-cask.git"
+# Command-line interface for SQLite
 brew "sqlite"
-brew "python", link: false
+# Interpreted, interactive, object-oriented programming language
+brew "python"
+# Official Amazon AWS command-line interface
 brew "awscli"
+# Programmable completion for Bash 3.2
 brew "bash-completion"
+# Informative, fancy bash prompt for Git users
 brew "bash-git-prompt"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Good-lookin' diffs with diff-highlight and more
 brew "diff-so-fancy"
-brew "docker"
+# Pack, ship and run any application as a lightweight container
+brew "docker", link: false
+# Launch process with environment variables from Consul and Vault
 brew "envconsul"
+# Programming language for highly scalable real-time systems
 brew "erlang"
+# Distributed revision control system
 brew "git"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Java-based scripting language
 brew "groovy"
+# Manage your Java environment
 brew "jenv"
+# Kubernetes command-line interface
 brew "kubernetes-cli"
+# Kubernetes Native Serverless Framework
 brew "kubeless"
+# The Kubernetes package manager
 brew "kubernetes-helm"
+# LastPass command-line interface tool
 brew "lastpass-cli"
+# Open source relational database management system
 brew "mysql", restart_service: true
+# Platform built on V8 to build network applications
 brew "node"
+# Manage multiple Node.js versions
+brew "nvm"
+# Open client for Cisco AnyConnect VPN
+brew "openconnect"
+# Tool for creating identical machine images for multiple platforms
 brew "packer"
+# Object-relational database system
 brew "postgresql", restart_service: true
+# Erlang build tool
 brew "rebar3"
+# User interface to the TELNET protocol (built from macOS Sierra sources)
 brew "telnet"
+# Tool to build, change, and version infrastructure
 brew "terraform"
+# Secures, stores, and tightly controls access to secrets
+brew "vault"
+# Executes a program periodically, showing output fullscreen
 brew "watch"
+# Internet file retriever
 brew "wget"
+# Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
 cask "java"
 cask "java11"
 cask "java6"
 cask "minikube"
 cask "spectacle"
-cask "pgi/cask/stim"
+cask "pgi/cash/stim"
