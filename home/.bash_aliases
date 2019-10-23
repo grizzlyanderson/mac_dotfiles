@@ -15,6 +15,11 @@ alias start_postgres="brew services start postgresql"
 alias stop_postrgres="brew services stop postgresql"
 alias restart_postgres="bres services restart postgresql"
 
+#####
+# vpn (use openconnect because cisco apparently doesn't play nice with next OS
+####
+alias pgivpn="sudo openconnect --user=eric.anderson@pgi.com --authgroup=Employee_VPN covpn.pgi.com"
+# TODO - readytalk vpn?
 
 #####
 #  k8s/helm aliases
