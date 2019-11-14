@@ -19,7 +19,7 @@ alias restart_postgres="bres services restart postgresql"
 # vpn (use openconnect because cisco apparently doesn't play nice with next OS
 ####
 alias pgivpn="sudo openconnect --user=eric.anderson@pgi.com --authgroup=Employee_VPN covpn.pgi.com"
-# TODO - readytalk vpn?
+alias rtvpn="sudo openconnect --user eric.anderson --authgroup ReadyTalkOktaMFA  https://entasa.readytalk.com"
 
 #####
 #  k8s/helm aliases
