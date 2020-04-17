@@ -4,7 +4,7 @@ alias lsa="ls -a"
 alias startAnsible="source ~/projects/virtualenvs/ansible/bin/activate"
 alias funcs="declare -F"
 # requires $ brew install lastpass-cli --with-pinentry --with-doc
-alias linuxpass='lpass show "readytalk.io - Linux" --password -c'
+alias linuxpass='lpass show "okta.com" --password -c'
 alias pgipass='lpass show "pgi-tools.com" --password -c'
 alias cat="bat" # \cat to use original cat...
 alias diff="diff-so-fancy"
@@ -28,6 +28,11 @@ alias uchelm='helm --tiller-namespace=ucaas-messaging'
 # launch brwoser window with AWS console for PGi account
 alias awsl='stim aws login -a aws-globalmeet -r ucaas-messaging -w'
 
+######
+# MITM Proxy
+######
+alias mitmOn="sudo pfctl -e; sudo -u nobody mitmweb --mode transparent --showhost -p 8090"
+alias mitmOff="sudo pfctl -d"
 ######
 # tunnel active mq console ports from remote machines to local ports, based on the last 2 digits of the remote machine's name
 # e.g. fordev324 maps to 7824; fordev326 to 7826 and so forth
