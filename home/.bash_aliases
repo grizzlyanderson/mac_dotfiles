@@ -4,8 +4,9 @@ alias lsa="ls -a"
 alias startAnsible="source ~/projects/virtualenvs/ansible/bin/activate"
 alias funcs="declare -F"
 # requires $ brew install lastpass-cli --with-pinentry --with-doc
-alias linuxpass='lpass show "okta.com" --password -c'
+alias linuxpass='lpass show "readytalk.io-Linux" --password -c'
 alias pgipass='lpass show "pgi-tools.com" --password -c'
+alias rtpass='lpass show "okta.com" --password -c'
 alias cat="bat" # \cat to use original cat...
 alias diff="diff-so-fancy"
 ######
