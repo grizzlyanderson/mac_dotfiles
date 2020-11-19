@@ -1,12 +1,12 @@
 # add local scripts to path
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin:$HOME/Library/Python/2.7/bin
 
 ####
 # hue stuff - get info about RT environments
 # Load hue automatically by adding
 # the following to ~/.bash_profile:
 ####
-eval "$(/Users/eric.anderson/stash/hue/bin/hue init -)"
+#eval "$(/Users/eric.anderson/stash/hue/bin/hue init -)"
 
 # Ensure you have set the following environment variables
 export DEPLOY_DIR=/Users/eric.anderson/stash/EI/deploy/
