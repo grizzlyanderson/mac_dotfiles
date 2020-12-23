@@ -19,7 +19,7 @@ alias restart_postgres="bres services restart postgresql"
 #####
 # saml2aws
 #####
-alias saml2aws="saml2aws --skip-prompt --session-duration=43200"
+alias saml2aws="saml2aws --skip-prompt --session-duration=3600"
 
 #####
 # vpn (use openconnect because cisco apparently doesn't play nice with next OS
