@@ -14,6 +14,7 @@ export DEPLOY_DIR=/Users/eric.anderson/stash/EI/deploy/
 #####
 # multiple java environment support
 ####
+export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 ######
@@ -40,4 +41,8 @@ export GROOVY_HOME=/usr/local/opt/groovysdk/libexec
 export PATH=$PATH:$HOME/projects/github.com/rebar
 
 ### welcome stuff
+HOSTNAME=$HOST
+if [[ $HOST == "ericanderson" ]]; then
+  HOSTNAME="$HOST (ibotta)"
+fi
 printf "Welcome to $HOSTNAME. The time is $(date +'%m/%d/%Y  %r')\n\n"
