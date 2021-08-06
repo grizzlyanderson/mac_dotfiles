@@ -2,7 +2,8 @@
 alias lsh="ls -lha"
 alias lsa="ls -a"
 alias startAnsible="source ~/projects/virtualenvs/ansible/bin/activate"
-alias funcs="declare -F"
+#alias funcs="declare -F"
+alias funcs="print -l ${(ok)functions}"
 # requires $ brew install lastpass-cli --with-pinentry --with-doc
 alias linuxpass='lpass show "readytalk.io-Linux" --password -c'
 #alias pgipass='lpass show "pgi-tools.com" --password -c'
