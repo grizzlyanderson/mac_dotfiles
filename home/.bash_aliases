@@ -11,6 +11,10 @@ alias linuxpass='lpass show "readytalk.io-Linux" --password -c'
 alias cat="bat" # \cat to use original cat...
 alias diff="diff-so-fancy"
 ######
+# git - consider adding to zsh git plugin?
+######
+alias gbclean="gf && git branch -vv | grep ': gone]' | grep -v \"\*\" | awk '{ print \$1; }' | xargs -r git branch -D"
+######
 #  postgres - installed/managed via homebrew
 ######
 alias start_postgres="brew services start postgresql"
