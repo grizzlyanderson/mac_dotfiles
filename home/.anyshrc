@@ -40,10 +40,17 @@ export GROOVY_HOME=/usr/local/opt/groovysdk/libexec
 ######
 export PATH=$PATH:$HOME/projects/github.com/rebar
 
+######
+# docker - addition to omz plugin - crush instances
+######
+alias dc_dangle='docker rmi $(docker images -a --filger=danging=true -q)'
+alias dc_exit='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+alias dka='docker kill $(docker ps -q)'
+
 ### welcome stuff
 fortune | cowsay
 HOSTNAME=$HOST
 if [[ $HOST == "ericanderson" ]]; then
   HOSTNAME="$HOST (ibotta)"
 fi
-printf "\n\nWelcome to $HOSTNAME. The time is $(date +'%m/%d/%Y  %r')\n\n"
+printf "\n\nWelcome to $HOSTNAME, $USER. The time is $(date +'%m/%d/%Y  %r')\n\n"

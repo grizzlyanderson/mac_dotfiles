@@ -13,7 +13,7 @@ alias diff="diff-so-fancy"
 ######
 # git - consider adding to zsh git plugin?
 ######
-alias gbclean="gf && git branch -vv | grep ': gone]' | grep -v \"\*\" | awk '{ print \$1; }' | xargs -r git branch -D"
+alias git_branch_clean="gf && git branch -vv | grep ': gone]' | grep -v \"\*\" | awk '{ print \$1; }' | xargs -r git branch -D"
 ######
 #  postgres - installed/managed via homebrew
 ######
@@ -25,7 +25,7 @@ alias restart_postgres="bres services restart postgresql"
 # saml2aws
 #####
 alias saml2aws="saml2aws --skip-prompt --session-duration=3600"
-
+alias saml_profiles="grep '\[profile' ~/.aws/config | sed 's/\[profile//'"
 #####
 # vpn (use openconnect because cisco apparently doesn't play nice with next OS
 ####
