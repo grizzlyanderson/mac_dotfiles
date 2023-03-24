@@ -102,7 +102,7 @@ prompt_context() {
 # SAML Context - doesn't work as desired (only when saml shell active)
 prompt_saml() {
   if [[ ! -z "$SAML_SHELL_PROFILE" ]]; then
-    prompt_segment black default "%F{yellow}SAML: $SAML_SHELL_PROFILE\n"
+    prompt_segment black default "%F{yellow}SAML: ($SHLVL)$SAML_SHELL_PROFILE\n"
   fi
 }
 # Git: branch/detached head, dirty status
