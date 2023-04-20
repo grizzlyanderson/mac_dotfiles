@@ -101,7 +101,7 @@ prompt_context() {
 
 # SAML Context - doesn't work as desired (only when saml shell active)
 prompt_saml() {
-  if [[ ! -z "$SAML_SHELL_PROFILE" ]]; then
+  if [[ ! -z "$SAML_SHELL_PROFILE" && ! -z "$AWS_ACCESS_KEY_ID" ]]; then
     prompt_segment black default "%F{yellow}SAML: ($SHLVL)$SAML_SHELL_PROFILE\n"
   fi
 }
