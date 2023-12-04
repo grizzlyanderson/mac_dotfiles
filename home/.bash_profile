@@ -80,3 +80,4 @@ fi
 if [ -f $HOME/.anyshrc ]; then
     ~/.anyshrc
 fi
+eval $(/opt/homebrew/bin/brew shellenv)

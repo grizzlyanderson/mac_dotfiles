@@ -8,6 +8,10 @@ export GOROOT=/Users/eric.anderson/go/go1.18
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/eric.anderson/.oh-my-zsh"
 
+# needed for custom auto-complete
+autoload -U compinit
+compinit
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -138,14 +142,14 @@ fi
 #####
 # asdf shell link not added by homebrew
 ####
-$(brew --prefix asdf)/asdf.sh
+#$(brew --prefix asdf)/asdf.sh
 
 #####
 # brew to install casks for user, not global (avoids sudo)
 #####
 export HOMEBREW_CASK_OPTS=--appdir=$HOME/Applications
 
-. /usr/local/opt/asdf/asdf.sh
+#. /usr/local/opt/asdf/asdf.sh
 
 ####
 # GEM STUFF via monolith - move to ibotta
